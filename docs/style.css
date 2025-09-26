@@ -106,9 +106,19 @@ nav a:hover {
   cursor: pointer;
   background: none;
   border: none;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px 10px;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
+
+.menu-btn span {
+  font-size: 20px;
+  line-height: 1;
+}
+
 
 .sidebar-overlay {
   position: fixed;
@@ -123,13 +133,11 @@ nav a:hover {
   z-index: 2000; 
 }
 
-
 .sidebar-overlay.active {
   opacity: 1;
   background: rgba(0, 0, 0, 0.4);
   pointer-events: auto;
 }
-
 
 .sidebar {
   width: 75%;
@@ -146,11 +154,9 @@ nav a:hover {
   gap: 5px;
 }
 
-
 .sidebar-overlay.active .sidebar {
   left: 0;
 }
-
 
 .sidebar-logos {
   display: flex;        
@@ -185,7 +191,7 @@ nav a:hover {
 
 .sidebar-nav a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   font-size: 18px;
   font-weight: 500;
 }
@@ -226,10 +232,6 @@ nav a:hover {
 
   nav {
     display: none;
-  }
-
-  .menu-btn {
-    display: block;
   }
 
   .logo-container {
@@ -273,16 +275,18 @@ nav a:hover {
   }
 
   .menu-btn {
-    display: block;          
-    cursor: pointer;
-    background: #429541;  
-    color: #000;         
-    border: 2px solid #000;  
-    padding: 10px 15px;
-    font-size: 18px;
-    font-weight: bold;
+    display: flex;             /* now visible only on small screens */
+    font-size: 14px;
+    padding: 5px 8px;
+    background: #429541;       /* optional: match theme */
+    color: #000;
+    border: 2px solid #000;
     border-radius: 6px;
-    transition: all 0.3s ease;
+  }
+
+  .menu-btn:hover {
+    background: #429541;
+    color: #fff;
   }
 }
 
@@ -434,8 +438,8 @@ nav a:hover {
   display: flex;
   justify-content: space-between; /* Evenly spread across the screen */
   gap: 20px;                      /* Space between boxes */
-  flex-wrap: nowrap;               /* Prevent wrapping */
-  width: 100%;                     /* Full width of parent */
+  flex-wrap: nowrap;              /* Prevent wrapping */
+  width: 100%;                    /* Full width of parent */
 }
 
 .time-box {
@@ -496,20 +500,33 @@ nav a:hover {
   
   /* Keep countdown horizontal, shrink boxes */
   .countdown-timer {
-    justify-content: center;  /* Center the boxes */
-    gap: 10px;                /* Reduce gap for small screens */
-    overflow-x: auto;         /* Optional: allow tiny horizontal scroll if really small */
-    padding: 0 5px;           /* Padding so boxes don’t touch screen edges */
+    justify-content: center;        /* Center the boxes */
+    gap: 8px;                       /* Slightly smaller gap */
+    overflow-x: auto;               /* Allow horizontal scroll if needed */
+    padding: 0 8px;                 /* Space from screen edges */
+    scroll-behavior: smooth;
   }
 
   .time-box {
-    flex: 0 0 auto;           /* Don’t grow, don’t shrink automatically */
-    min-width: 80px;          /* Smaller boxes on small screens */
-    padding: 15px 10px;
+    flex: 0 0 70px;                 /* ✅ Fixed width to prevent overflow */
+    min-width: 70px;
+    padding: 12px 8px;             /* ✅ Adjusted padding to fit small screens */
   }
 }
 
+/* 🔥 Ultra-small screen fine-tuning */
+@media(max-width:380px) {
+  .countdown-timer {
+    gap: 6px;                       /* Even smaller gap */
+    padding: 0 5px;
+  }
 
+  .time-box {
+    flex: 0 0 65px;                /* ✅ Adjusted for 344px width devices */
+    min-width: 65px;
+    padding: 10px 6px;
+  }
+}
 
 
 
@@ -570,7 +587,7 @@ nav a:hover {
     width: 100%;
     max-width: 500px;
     height: auto;
-    border-radius: 12px;
+    border-radius: 6px;
     border: 2px solid #000;
 }
 
@@ -1187,8 +1204,8 @@ nav a:hover {
 /* Individual Team Card */
 .team-card {
   display: flex;
-  gap: 30px;
   background: #ffffff;
+  gap: 30px;
   border: 2px solid #429541;
   border-radius: 12px;
   padding: 30px;
@@ -1255,19 +1272,59 @@ nav a:hover {
   transform: translateY(-3px);
 }
 
-/* Responsive */
+/* Responsive - Team Section */
 @media (max-width: 768px) {
   .team-card {
     flex-direction: column;
     text-align: center;
+    padding: 20px;
+    gap: 0px;
   }
 
+  /* Image full-width & centered like Mentor section */
   .team-left {
+    width: 100%;
+    min-width: 100%;
+    padding: 15px; /* ✅ adds equal space on left & right */
     margin-bottom: 20px;
+  }
+
+  .team-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Text part full width & centered */
+  .team-right {
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .team-name {
+    font-size: 22px;
+  }
+
+  .team-designation {
+    font-size: 14px;
+  }
+
+  .team-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 10px; /* ✅ ensures text doesn’t hit card edges */
+  }
+
+  /* Social icons centered */
+  .team-social {
+    justify-content: center;
   }
 
   .team-social a {
     margin-right: 10px;
+    font-size: 20px;
   }
 }
 
@@ -1299,7 +1356,7 @@ nav a:hover {
 .contact-info {
   flex: 1;
   padding: 50px;
-  background: #f8fdf9;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1537,24 +1594,6 @@ nav a:hover {
   text-align: center;
 }
 
-.footer-column h4 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #429541;
-  font-weight: 600;
-  position: relative;
-}
-
-.footer-column h4::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #429541;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
 .footer-column a {
   display: block;
   color: #000;
@@ -1614,11 +1653,6 @@ nav a:hover {
   opacity: 0.8;
 }
 
-.coming-box:hover {
-  transform: translateY(-5px);
-  background: #e9f8ec;
-}
-
 /* Social Media */
 .social-icons-footer {
   text-align: center;
@@ -1664,6 +1698,24 @@ nav a:hover {
   word-wrap: break-word;
 }
 
+.footer-credits {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.footer-credits strong {
+  color: #000000; /* Highlight name in green */
+  font-weight: 700;
+}
+
+.footer-credits p {
+  margin: 5px 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .footer-logos img {
@@ -1687,5 +1739,10 @@ nav a:hover {
   .coming-box {
     width: 100%;
     max-width: 250px;
+  }
+
+  .footer-credits {
+    font-size: 14px;
+    padding: 0 10px;
   }
 }
