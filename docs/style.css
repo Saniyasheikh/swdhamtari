@@ -32,7 +32,7 @@ header {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ✅ logos stay left */
+  justify-content: flex-start;
 }
 
 .left-logo-1,
@@ -68,15 +68,15 @@ nav a::after {
   content: "";
   position: absolute;
   width: 0;
-  height: 3px;         /* Thickness of the underline */
+  height: 3px;   
   left: 0;
-  bottom: -5px;        /* Space between text and line */
-  background-color: #429541; /* Green underline */
+  bottom: -5px;       
+  background-color: #429541;
   transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-  width: 100%;         /* Line expands full width on hover */
+  width: 100%;         
 }
 
 nav a:hover {
@@ -275,10 +275,10 @@ nav a:hover {
   }
 
   .menu-btn {
-    display: flex;             /* now visible only on small screens */
+    display: flex;             
     font-size: 14px;
     padding: 5px 8px;
-    background: #429541;       /* optional: match theme */
+    background: #429541;       
     color: #000;
     border: 2px solid #000;
     border-radius: 6px;
@@ -299,19 +299,19 @@ nav a:hover {
 .hero {
   width: 100%;
   background: #f9f9f9;
-  padding-top: 100px; /* Top padding to clear fixed header */
+  padding-top: 100px; 
   padding-bottom: 50px;
 }
 
 .hero-container {
-  max-width: 1200px;      /* Same as header */
-  margin: auto;            /* Centers content */
-  padding: 20px;         /* Same horizontal padding as header */
+  max-width: 1200px;    
+  margin: auto;            
+  padding: 20px;      
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;         /* Responsive wrap */
+  flex-wrap: wrap;        
 }
 
 /* Left Side */
@@ -367,12 +367,12 @@ nav a:hover {
 
 @media (max-width: 768px) {
     .hero {
-    padding-top: 70px; /* Reduce top padding for smaller header on mobile */
+    padding-top: 70px; 
   }
 
   .hero-container {
     flex-direction: column;
-    text-align: left; /* Keep left alignment instead of center */
+    text-align: left; 
   }
 
   .hero-left-img,
@@ -396,7 +396,7 @@ nav a:hover {
 
 .countdown-section {
   width: 100%;
-  background: #429541; /* Green background */
+  background: #429541; 
   color: #ffffff;
   padding: 40px 0px;
 }
@@ -409,7 +409,7 @@ nav a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  flex-wrap: wrap; /* Responsive */
+  flex-wrap: wrap; 
 }
 
 /* Left Side (Countdown) */
@@ -493,29 +493,29 @@ nav a:hover {
   
   /* Keep countdown horizontal, shrink boxes */
   .countdown-timer {
-    justify-content: center;        /* Center the boxes */
-    gap: 8px;                       /* Slightly smaller gap */
-    overflow-x: auto;               /* Allow horizontal scroll if needed */
-    padding: 0 8px;                 /* Space from screen edges */
+    justify-content: center;        
+    gap: 8px;                       
+    overflow-x: auto;               
+    padding: 0 8px;                 
     scroll-behavior: smooth;
   }
 
   .time-box {
-    flex: 0 0 70px;                 /* ✅ Fixed width to prevent overflow */
+    flex: 0 0 70px;             
     min-width: 70px;
-    padding: 12px 8px;             /* ✅ Adjusted padding to fit small screens */
+    padding: 12px 8px;             
   }
 }
 
 /* 🔥 Ultra-small screen fine-tuning */
 @media(max-width:380px) {
   .countdown-timer {
-    gap: 6px;                       /* Even smaller gap */
+    gap: 6px;                     
     padding: 0 5px;
   }
 
   .time-box {
-    flex: 0 0 65px;                /* ✅ Adjusted for 344px width devices */
+    flex: 0 0 65px;            
     min-width: 65px;
     padding: 10px 6px;
   }
@@ -524,9 +524,9 @@ nav a:hover {
 
 /* Main About Section */
 .about-main-section {
-  width: 100%; /* 🔥 full width now */
+  width: 100%; 
   padding: 40px 20px;
-  background: #ffffff; /* full white background */
+  background: #ffffff; 
 }
 
 .about-container {
@@ -621,6 +621,100 @@ nav a:hover {
 }
 
 
+
+
+/* Schedule Section */
+.schedule-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.schedule-heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #429541;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Schedule Days */
+.schedule-day {
+  margin-bottom: 50px;
+}
+
+.schedule-day h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Schedule Table */
+.schedule-table {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #429541;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+}
+
+.schedule-row:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: #000;
+  flex-basis: 25%;
+}
+
+.schedule-activity {
+  flex-basis: 70%;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .schedule-heading {
+    font-size: 28px;
+  }
+  .schedule-day h3 {
+    font-size: 22px;
+  }
+  .schedule-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+  .schedule-time, .schedule-activity {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
 /* Sustainability Section */
 .sustainability-section {
     width: 100%;
@@ -661,7 +755,7 @@ nav a:hover {
     color: #429541;
     line-height: 1.1;
     margin: 0;
-    white-space: nowrap; /* ✅ Keep one-line layout */
+    white-space: nowrap; 
 }
 
 .sustainability-para {
@@ -723,57 +817,34 @@ nav a:hover {
 
 
 
-
-
-/* .event-content {
-  max-width: 1200px;
-  text-align: left;
-  margin-bottom: 40px;
-  align-self: flex-start; /* keeps text left-aligned
-} */
-
-/* .event-title {
-  font-size: 46px;
-  font-weight: 1200;
-  color: #429541;
-  margin-bottom: 10px;
-} */
-
-/* .event-description-register {
-  font-size: 26px;
-  font-weight: 1200;
-  color: #429541;
-  margin-bottom: 10px;
-} */
-
 .event-section {
   width: 100%;
   display: flex;
-  justify-content: center; /* centers the container horizontally */
+  justify-content: center; 
   padding: 60px 20px;
   box-sizing: border-box;
   background: #ffffff;
 }
 
 .event-content {
-  max-width: 1200px;      /* limits width */
-  width: 100%;             /* still allows responsiveness */
-  text-align: left;        /* text aligned to left */
-  margin: 0 auto 40px;     /* auto left/right margins to center container */
+  max-width: 1200px;      
+  width: 100%;            
+  text-align: left;       
+  margin: 0 auto 40px;   
   box-sizing: border-box;
 }
 
 /* Titles */
 .event-title {
   font-size: 46px;
-  font-weight: 800;       /* corrected font-weight */
+  font-weight: 800;     
   color: #429541;
   margin-bottom: 10px;
 }
 
 .event-description-register {
   font-size: 26px;
-  font-weight: 800;       /* corrected font-weight */
+  font-weight: 800;    
   color: #429541;
   margin-bottom: 10px;
 }
@@ -794,25 +865,25 @@ nav a:hover {
 /* 📦 Iframe Container */
 .event-iframe-container {
   display: flex;
-  justify-content: center;       /* centers the iframe horizontally */
-  padding: 20px;                 /* space around the iframe */
-  box-sizing: border-box;        /* includes padding in width calculations */
+  justify-content: center;
+  padding: 20px;                 
+  box-sizing: border-box;
   width: 100%;
-  max-width: 1200px;             /* limits container width */
-  margin: 0 auto;                /* ensures container is centered */
+  max-width: 1200px;            
+  margin: 0 auto;           
 }
 
 .event-iframe-container iframe {
-  width: 100%;                   /* iframe takes full width of container */
-  max-width: 1200px;             /* prevents it from being too wide on large screens */
-  height: 520px;                  /* fixed height */
-  display: block;                /* removes inline spacing issues */
+  width: 100%;                   
+  max-width: 1200px;         
+  height: 520px;           
+  display: block;          
 }
 
 /* 📱 Responsive */
 @media (max-width: 768px) {
   .event-iframe-container iframe {
-    height: 480px;               /* smaller height on mobile */
+    height: 480px;               
   }
 }
 
@@ -845,12 +916,12 @@ nav a:hover {
 .advisor-card {
     display: flex;
     gap: 30px;
-    background: #429541;  /* Green card */
-    color: #fff;           /* White text */
+    background: #429541; 
+    color: #fff;         
     border-radius: 12px;
     border: 2px solid #000;
     padding: 30px;
-    align-items: center;   /* Vertical centering */
+    align-items: center;
     flex-wrap: wrap;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -880,7 +951,7 @@ nav a:hover {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center text vertically */
+    justify-content: center; 
 }
 
 .advisor-card-name {
@@ -904,7 +975,7 @@ nav a:hover {
 /* --- Social Icons --- */
 .advisor-card-social a {
     font-size: 22px;
-    color: #fff; /* White icons */
+    color: #fff; 
     margin-right: 15px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -934,15 +1005,10 @@ nav a:hover {
 
 
 
-
-
-
-
-
 /* --- Facilitators Section --- */
 .facilitators-section {
     width: 100%;
-    background: #429541; /* Green section background */
+    background: #429541; 
     padding: 60px 20px;
 }
 
@@ -956,7 +1022,7 @@ nav a:hover {
     text-align: center;
     font-size: 36px;
     margin-bottom: 50px;
-    color: #fff; /* White heading on green background */
+    color: #fff; 
     letter-spacing: 1px;
 }
 
@@ -964,12 +1030,12 @@ nav a:hover {
 .facilitator-card {
     display: flex;
     gap: 30px;
-    background: #fff;  /* White card */
-    color: #000;       /* Black text */
+    background: #fff;  
+    color: #000;     
     border-radius: 12px;
     border: 2px solid #000;
     padding: 30px;
-    align-items: center;   /* Vertical centering */
+    align-items: center;  
     flex-wrap: wrap;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -999,7 +1065,7 @@ nav a:hover {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center text vertically */
+    justify-content: center; 
 }
 
 .facilitator-card-name {
