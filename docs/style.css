@@ -9,13 +9,68 @@ body {
   background: #ffffff;
 }
 
+/* Sticky Top Scroll Bar */
+.top-scroll-bar {
+  width: 100%;
+  background-color: #429541;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 40px;
+  box-sizing: border-box;
+  position: fixed; /* Sticky at top */
+  top: 0;
+  left: 0;
+  z-index: 1100; /* higher than header */
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* Push header down so it doesn't overlap */
+header {
+  position: fixed;
+  top: 40px;  /* same as bar height */
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Scroll Text Animation */
+.scroll-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+}
+
+.register-link {
+  color: #fff;
+  font-weight: 700;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+.close-bar {
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
 /* Header */
 header {
   width: 100%;
   background: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   z-index: 1000;
 }
@@ -291,15 +346,11 @@ nav a:hover {
 }
 
 
-
-
-
-
 /* Hero Section */
 .hero {
   width: 100%;
   background: #f9f9f9;
-  padding-top: 100px; 
+  padding-top: 120px; 
   padding-bottom: 50px;
 }
 
@@ -627,7 +678,7 @@ nav a:hover {
 .schedule-section {
   width: 100%;
   background: #ffffff;
-  padding: 60px 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
@@ -640,7 +691,7 @@ nav a:hover {
   font-size: 36px;
   font-weight: 800;
   color: #429541;
-  text-align: center;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -719,7 +770,7 @@ nav a:hover {
 .sustainability-section {
     width: 100%;
     background: #ffffff;
-    padding: 40px 20px;
+    padding: 0px 20px 20px 20px;
     overflow-x: hidden;
 }
 
@@ -817,20 +868,11 @@ nav a:hover {
 
 
 
-.event-section {
-  width: 100%;
-  display: flex;
-  justify-content: center; 
-  padding: 60px 20px;
-  box-sizing: border-box;
-  background: #ffffff;
-}
-
 .event-content {
   max-width: 1200px;      
   width: 100%;            
   text-align: left;       
-  margin: 0 auto 40px;   
+  margin: 40px auto 40px;   
   box-sizing: border-box;
 }
 
@@ -853,10 +895,12 @@ nav a:hover {
 @media (max-width: 768px) {
   .event-title {
     font-size: 32px;
+    padding: 20px;
   }
 
   .event-description-register {
     font-size: 18px;
+    padding: 20px;
   }
 }
 
@@ -883,7 +927,7 @@ nav a:hover {
 /* 📱 Responsive */
 @media (max-width: 768px) {
   .event-iframe-container iframe {
-    height: 480px;               
+    height: 850px;               
   }
 }
 

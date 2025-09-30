@@ -1,3 +1,10 @@
+function closeBar() {
+  const bar = document.getElementById('topScrollBar');
+  bar.style.display = 'none';
+  document.querySelector('header').style.top = '0'; // reset header top
+}
+
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebarOverlay = document.getElementById("sidebarOverlay");
 
