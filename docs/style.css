@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f9f9f9;
+  background: #ffffff;
 }
 
 /* Header */
@@ -322,19 +322,13 @@ nav a:hover {
 
 .hero-left-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   margin-top: 20px;
 }
 
-.hero-left h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #000;
-}
-
 .hero-left p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 20px;
   color: #000000;
 }
@@ -404,12 +398,13 @@ nav a:hover {
   width: 100%;
   background: #429541; /* Green background */
   color: #ffffff;
-  padding: 60px 20px;
+  padding: 40px 0px;
 }
 
 .countdown-container {
   max-width: 1200px;
   margin: auto;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -421,30 +416,24 @@ nav a:hover {
 .countdown-left {
   flex: 1;
   min-width: 300px;
-  text-align: center;
 }
 
-.countdown-left h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.countdown-left p {
-  font-size: 18px;
-  margin-bottom: 30px;
+.countdown-left h3 {
+  font-size: 42px;
+  margin-bottom: 40px;
 }
 
 .countdown-timer {
   display: flex;
-  justify-content: space-between; /* Evenly spread across the screen */
-  gap: 20px;                      /* Space between boxes */
-  flex-wrap: nowrap;              /* Prevent wrapping */
-  width: 100%;                    /* Full width of parent */
+  justify-content: space-between;
+  gap: 20px;                   
+  flex-wrap: nowrap;        
+  width: 100%;               
 }
 
 .time-box {
-  flex: 1;                         /* Each box takes equal space */
-  max-width: 150px;                /* Optional: limit box size */
+  flex: 1;                  
+  max-width: 150px;
   background: rgba(255, 255, 255, 0.15);
   padding: 20px 10px;
   border-radius: 12px;
@@ -480,7 +469,7 @@ nav a:hover {
 }
 
 .countdown-img {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
   border: 2px solid #000;
@@ -491,6 +480,10 @@ nav a:hover {
   .countdown-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .countdown-left h3 {
+    font-size: 24px;
   }
   
   .countdown-left,
@@ -529,12 +522,110 @@ nav a:hover {
 }
 
 
+/* Main About Section */
+.about-main-section {
+  width: 100%; /* 🔥 full width now */
+  padding: 40px 20px;
+  background: #ffffff; /* full white background */
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero h1 {
+  position: relative;
+  color: #fff;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* Content Box */
+.about-box {
+  max-width: 1200px;
+  margin: 40px auto 40px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid #429541;
+}
+
+.about-box h2 {
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 20px;
+  border-left: 5px solid #429541;
+  padding-left: 15px;
+}
+
+.about-box h3 {
+  font-size: 24px;
+  color: #429541;
+  margin-top: 25px;
+}
+
+.about-box p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.about-box ul {
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.about-box ul li {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.7;
+  list-style-type: disc;
+}
+
+/* 🌐 Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 20;
+    height: 280px;
+  }
+
+  .about-hero h1 {
+    font-size: 30px;
+    padding: 0 10px;
+  }
+
+  .about-box {
+    padding: 30px 20px;
+    margin: 20px 0px;
+  }
+
+  .about-box h2 {
+    font-size: 26px;
+  }
+
+  .about-box h3 {
+    font-size: 20px;
+  }
+
+  .about-box p, 
+  .about-box ul li {
+    font-size: 15px;
+  }
+}
+
 
 /* Sustainability Section */
 .sustainability-section {
     width: 100%;
     background: #ffffff;
-    padding: 80px 20px;
+    padding: 40px 20px;
     overflow-x: hidden;
 }
 
@@ -565,12 +656,19 @@ nav a:hover {
 
 /* Responsive, non-wrapping hashtag */
 .sustainability-hashtag {
-    font-size: clamp(40px, 8vw, 90px);
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: bold;
     color: #429541;
     line-height: 1.1;
     margin: 0;
     white-space: nowrap; /* ✅ Keep one-line layout */
+}
+
+.sustainability-para {
+  font-size: 14px;
+  color: #000000;
+  margin-top: 10px;
+  word-wrap: break-word;
 }
 
 
@@ -585,7 +683,7 @@ nav a:hover {
 
 .sdg-img {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
     height: auto;
     border-radius: 6px;
     border: 2px solid #000;
@@ -627,6 +725,98 @@ nav a:hover {
 
 
 
+/* .event-content {
+  max-width: 1200px;
+  text-align: left;
+  margin-bottom: 40px;
+  align-self: flex-start; /* keeps text left-aligned
+} */
+
+/* .event-title {
+  font-size: 46px;
+  font-weight: 1200;
+  color: #429541;
+  margin-bottom: 10px;
+} */
+
+/* .event-description-register {
+  font-size: 26px;
+  font-weight: 1200;
+  color: #429541;
+  margin-bottom: 10px;
+} */
+
+.event-section {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centers the container horizontally */
+  padding: 60px 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.event-content {
+  max-width: 1200px;      /* limits width */
+  width: 100%;             /* still allows responsiveness */
+  text-align: left;        /* text aligned to left */
+  margin: 0 auto 40px;     /* auto left/right margins to center container */
+  box-sizing: border-box;
+}
+
+/* Titles */
+.event-title {
+  font-size: 46px;
+  font-weight: 800;       /* corrected font-weight */
+  color: #429541;
+  margin-bottom: 10px;
+}
+
+.event-description-register {
+  font-size: 26px;
+  font-weight: 800;       /* corrected font-weight */
+  color: #429541;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .event-title {
+    font-size: 32px;
+  }
+
+  .event-description-register {
+    font-size: 18px;
+  }
+}
+
+
+
+/* 📦 Iframe Container */
+.event-iframe-container {
+  display: flex;
+  justify-content: center;       /* centers the iframe horizontally */
+  padding: 20px;                 /* space around the iframe */
+  box-sizing: border-box;        /* includes padding in width calculations */
+  width: 100%;
+  max-width: 1200px;             /* limits container width */
+  margin: 0 auto;                /* ensures container is centered */
+}
+
+.event-iframe-container iframe {
+  width: 100%;                   /* iframe takes full width of container */
+  max-width: 1200px;             /* prevents it from being too wide on large screens */
+  height: 520px;                  /* fixed height */
+  display: block;                /* removes inline spacing issues */
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .event-iframe-container iframe {
+    height: 480px;               /* smaller height on mobile */
+  }
+}
+
+
 
 
 /* --- Advisors Section --- */
@@ -645,6 +835,7 @@ nav a:hover {
 .advisors-heading {
     text-align: center;
     font-size: 36px;
+    margin-top: 50px;
     margin-bottom: 50px;
     color: #000;
     letter-spacing: 1px;
